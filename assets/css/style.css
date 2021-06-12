@@ -1,0 +1,674 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x:hidden;
+}
+
+.Header{
+    height: 60px;
+    width: 100%;
+   background-color: rgb(247, 244, 244);
+   /* position: fixed; */
+   z-index: 5;
+    /* top:0; */
+    box-shadow: 3px 3px 3px  rgba(151, 148, 148,0.6);
+    
+}
+
+.overlay{
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+    animation: fadeIn linear 0.2s;  /***********/
+}
+
+.Header_left-mobile{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    background-color: rgb(255, 255, 255);
+    max-width: 100%;
+    transform:translateX(100%);
+    opacity: 0;
+    transition: transform linear 0.2s,opacity linear 0s;  /* hieu ung truot cua thanh cong cu*/
+    z-index: 5;
+    }
+
+/* DAY CHINH LLA BAM VAO DE HIEN HOAC AN CAI THE INPUT */
+.input-check:checked ~ .overlay{  
+    display: block;
+}    
+/* DAY CHINH LLA BAM VAO DE HIEN HOAC AN CAI THE INPUT */
+.input-check:checked ~ .Header_left-mobile{  
+    transform:translateX(0%);
+    opacity: 1;  /* hieu ung m dan cho thanh ben phai*/
+}  
+
+.Header-right-list-text-2{
+    padding-left: 20px;
+text-decoration: none;
+color: black;
+display: block;
+border-top: 1px solid rgb(231, 231, 231);
+}
+
+.icon-close{
+    display: block;
+    text-align: right;
+    font-size: 28px;
+}
+
+
+.Header-icon-item{
+    font-size: 30px;
+   
+   
+}
+
+@media  (max-width: 1023px){
+
+
+    .Header-icon{
+        display: block;
+    }
+    .Header-right{
+        display: none;
+    }
+}
+
+
+@media  (min-width: 1023px){
+    .Header-icon{
+        display: none;
+    }
+    .Header-right{
+        display: block;
+    }
+}
+
+.input-check{
+    display: none;
+}
+
+.icon-header{
+    color: black;
+}
+
+.Header-size{
+    display: flex;
+    justify-content: space-between;
+    line-height: 60px;
+    height: 60px;
+
+    margin: 0 100px;
+}
+
+.Header-left-text{
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    font-size: 34px;
+}
+
+.Header-right-list-text{
+   
+    margin: 0 10px;
+    font-size: 20px;
+    display:inline-block;
+    transition: 0.6s;
+    position: relative;
+}
+
+.Header-right-list-text-1{
+     text-decoration: none;
+    color: black;
+}
+.list-home-item{
+    left: 20px
+}
+.list-home{
+    display:none;
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(255, 255, 255,0.9);
+    text-align: left;
+    width: 200px;
+    border-radius: 3px;
+
+    border-radius: 3px;
+    box-shadow: 2px 2px 2px rgb(207, 206, 206);
+    /*An di phan thua ra ngoai cua the a */
+   overflow: hidden;
+}
+
+
+.Header-right-list-text:hover .list-home{
+    display: block;
+    animation: fadeInDownBig-header 1s forwards;
+}
+/*--------------------------------Hieu ung cho header menu da cap --------------------------------------------------------*/
+
+
+@-webkit-keyframes fadeInDownBig-header {
+    from {
+      transform: translateY(-50px);
+    }
+  
+    to {
+      transform: translateY(0);
+    }
+  }
+
+
+.list-home-item{
+    text-decoration: none;
+    color: black;
+    padding-left: 14px;
+
+/*--------------------------------------------------------cho the a chiem het 1 dong de hover ------------------------------------------*/
+    display: inline-block;  
+    width: 200px;
+}
+
+.list-home-item:hover{
+    background-color: rgb(168, 245, 16,0.6);
+}
+
+
+
+
+
+.Header-right-list-text:hover{
+color: rgb(255, 255, 255);
+background-color: #979797;
+border-radius: 50px;
+}
+
+
+.Header-right-list-text-icon{
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+
+/*------------------------------ Hieu ung truot bagn html va css ------------------------------------------------------- */
+
+
+.Header-img{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    position: absolute;
+    /* top:45%; */
+    top: 360px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 0;
+}
+
+.navigation{
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.bar{
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-radius: 30px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.bar:hover{
+    background-color: white;
+    transition: 0.6s;
+    border:2px solid red ;
+}
+
+input[name="bottom"]{
+    position: absolute;
+    visibility: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 100%;
+    display: flex;
+
+}
+
+.slide{
+    width: 20%;
+    transition: 0.6s;
+}
+
+.slide img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /*lam cho hinh khong bi meo*/
+}
+
+#bottom_1:checked ~ .s1{
+    margin-left: -0%;
+}
+#bottom_2:checked ~ .s1{
+    margin-left: -20%;
+}
+#bottom_3:checked ~ .s1{
+    margin-left: -40%;
+}
+#bottom_4:checked ~ .s1{
+    margin-left: -60%;
+}
+
+/*------------------------------ Hieu ung truot bagn html va css ------------------------------------------------------- */
+
+
+
+.Projects{
+    width: 100%;
+    background-color: #F8F8F8;
+    margin: 116px 0px;
+    border-top: 1px solid rgb(172, 169, 169);  /*Tao vien cho 2 the ke nhau */
+}
+.Projects-img{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Projects-topic{
+    line-height: 46px;
+    font-size: 46px;
+    text-align: center;
+    margin: 32px 0px;
+    font-weight: 700;
+    /* animation: fadeInDownBig 2s forwards; */
+}
+
+
+/* --------------------------------------PHẦN HIỆU ỨNG PHÓNG TO ẢNH ------------------------------------------------------------------*/
+.img-item{
+    width: 25%;
+    height: 264px;
+    background-color: #00ff5e;
+    z-index: 1;
+}
+
+.option-img{
+    width: 100%;   /* LAM NHU VAY ANH SE VUA KICH THUOC CHO FLEX */
+    height: 264px;
+    object-fit: cover;
+}
+
+.option-name{
+    color: rgb(255, 255, 255);
+    font-size: 36px;
+    position: absolute;
+    font-weight: bold;
+    letter-spacing: 2px;  /*dan cach cac ki tu trong chu*/
+    bottom: 30%;
+    right: 40%;
+    transition: linear 0.3s;
+    opacity: 0;
+    
+    
+}
+
+/* Hieu ung phong to anh */
+.img-item:hover img{
+    transform: scale(1.05);
+    transition: linear 0.3s; 
+    opacity: 0.6;
+    
+}
+
+/* Lam cho anh khong tran ra ngoai, overflow vao the to chua anh */
+.img-item{   
+    overflow: hidden;
+    position: relative;
+}
+
+
+.img-item:hover .option-name{
+    bottom: 50%;
+    opacity: 1;
+}
+
+/* --------------------------------------PHẦN HIỆU ỨNG PHÓNG TO ẢNH ------------------------------------------------------------------*/
+
+
+.Body1{
+    width: 100%;
+    background-color: #F8F8F8;
+    border-top: 1px solid rgb(172, 169, 169);  /*Tao vien cho 2 the ke nhau */
+
+}
+
+.Body1-struct{
+    display: flex;
+    padding: 64px 0;
+    width: 100%;
+    margin: 0 30px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+.Body1-text{
+    width: 42%;
+    height: 100%;
+    padding: 50px 0;
+
+    animation: hieu-ung 2s forwards;
+}
+
+.Body1-img{
+    width: 42%;
+    transition: 1s;
+    animation: fadeInDownBig 2s forwards;
+    
+}
+
+.Body1-img-item{
+    width: 100%;
+    padding: 60px 30px;
+
+}
+
+@-webkit-keyframes hieu-ung{
+    form{
+        opacity: 0;
+        transform: scale(1);
+        
+    }
+    to{
+        opacity: 1;
+        transform: scale(1.1);
+        
+    }
+}
+
+
+@-webkit-keyframes fadeInDownBig {
+    from {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+  
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+
+.Body1-text-one{
+    text-align: center;
+    font-size: 36px;
+    margin: 20px 0;
+}
+
+.Body1-text-two{
+    text-align: center;
+    font-size: 28px;
+    margin: 60px 0;
+    color: #828282;
+}
+
+.Body1-text-three{
+    text-align: center;
+    font-size:18px;
+    border: 2px solid #44b272;
+    border-radius: 50px;
+    padding: 10px;
+    margin-left: 32%;   
+    cursor: pointer; 
+    color: #44b272;
+    
+}
+.Body1-text-three:hover{
+    background-color: #44b272;
+    transition: linear 0.3s;
+    color: white;
+}
+
+/*----------------------------------------------------------------------------Team--------------------------------------------------------------*/
+.Team{
+    width: 100%;
+    background-color: white;
+    
+}
+
+.Team-body{
+    width: 100%;
+   
+}
+.Team-members{
+margin: 30px 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Team-members-item{
+    width: 22.7%;
+    margin: 10px;
+    
+    background-color: rgb(255, 255, 255);
+   border:1px solid rgb(192, 191, 191);
+   box-shadow: 4px 4px 4px rgba(192, 191, 191,0.8);;
+}
+.Team-members-item-img{
+    width: 100%;
+}
+
+.member-name{
+    font-size: 30px;
+    color: #555454;
+    padding: 0 16px;
+    
+}
+
+.member-work{
+    font-size: 18px;
+    color: #b9b9b9;
+    padding: 0 16px;
+}
+
+.member-information{
+    font-size: 18px;
+    color: #7c7b7b;
+    padding: 0 16px;
+}
+
+.member-contact-btn{
+    margin: 10px;
+    font-size: 26px;
+    outline: none;
+    border:1px solid rgb(192, 191, 191);
+    box-shadow: 4px 4px 4px rgba(192, 191, 191,0.4);
+    width: 92%;
+ }
+
+ .member-contact-btn:hover{
+     background-color: rgba(176, 177, 176, 0.8);
+ }
+
+ .member-contact{
+     text-decoration: none;
+     color: black;
+ }
+
+ .Team-topic{
+     text-align: center;
+     margin: 64px 0;
+ }
+
+ .Team-topic-1{
+     font-size: 36px;
+ }
+ .Team-topic-2{
+     font-size: 24px;
+ }
+
+ .contact{
+     margin: 64px 0;
+ }
+ .contact-body1{
+     margin-left: 40px;
+     font-size: 24px;
+ }
+
+ .contact-btn{
+    margin-left: 40px;
+ }
+ .contact-btn-input{
+     padding: 10px;
+     font-size: 18px;
+     width: 80%;
+     margin:10px 0; 
+     outline: none;
+    border: 1px solid rgba(192, 192, 192, 0.8);;
+     
+ }
+
+ .contact-btn-button{
+     font-size: 20px;
+     padding: 10px;
+     background-color: rgba(192, 191, 191,0.8);
+     border: 1px solid rgba(192, 191, 191,0.8);
+     border-radius: 3px;
+ }
+
+ .contact-btn-button:hover{
+    background-color: rgba(63, 63, 63, 0.8);
+    color: white;
+ }
+ .contact-icon{
+     font-size: 28px;
+     margin: 0 16px 0 0;
+ }
+
+
+
+/*======================================REPONSIZE-------------------------------------------------------------*/
+ @media only screen and (max-width: 739px){
+
+    .Header-icon-item{
+        padding-left: 80px;
+        margin-top: 15px;
+    }
+    .option-name{
+        font-size: 18px;
+    }
+    .img-item{
+        width: 100%;
+    }
+
+
+    .Body1-text{
+        width: 100%;
+        margin-left:60px; 
+        }
+        .Body1-img{
+            width: 100%;
+        }
+        .Body1-text{
+            padding: 60px 0px;
+        }
+
+        .Body1-text-one{
+            font-size: 24px;
+            margin: 10px 0 20px -106px;
+        }
+        .Body1-text-two {
+           
+            margin: 10px 80px 40px 0px;
+            font-size: 18px;
+            text-align:left;
+    }
+    .Body1-img-item {
+        padding: 0;
+        margin-left: -30px;
+    }
+    .Body1-text-three{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 7%;
+    }
+       .Team-members-item{
+        width:100%;
+       }
+
+ }
+
+ /* Tablet  width >=740px and width <1024px*/
+
+@media only screen and (min-width: 740px) and (max-width: 1024px){
+    .img-item{
+        width: 50%;
+    }
+   .Body1-text{
+    width: 100%;
+    margin-left:60px; 
+    }
+    .Body1-img{
+        width: 100%;
+    }
+    .Body1-text{
+        padding: 60px 0px;
+    }
+    .Body1-text-two {
+       
+        margin: 10px 80px 40px 0px;
+        font-size: 18px;
+        text-align:left;
+}
+.Body1-img-item {
+    padding: 0;
+    margin-left: -30px;
+}
+.Body1-text-three{
+margin-top: 20px;
+margin-bottom: 20px;
+}
+   .Team-members-item{
+    width: 32.7%;
+   }
+
+}
+
+
+.Footer{
+    background-color: black;
+    width: 100%;
+    height: 300px;
+   text-align: center;
+}
+
+.Footer-icon-item{
+    
+    color:white;
+    font-size: 38px;
+    margin:20px 10px;
+}
+.Footer-icon{
+    
+    width: 100%;
+}
+
+.Footer-text{
+color: white;
+font-size: 18px;
+}
